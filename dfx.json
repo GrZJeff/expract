@@ -1,0 +1,50 @@
+{
+  "canisters": {
+    "examen_backend": {
+      "build": "npx azle examen_backend",
+      "candid": "src/examen_backend/examen_backend.did",
+      "gzip": true,
+      "main": "src/examen_backend/src/index.ts",
+      "tech_stack": {
+        "cdk": {
+          "azle": {}
+        },
+        "language": {
+          "javascript": {},
+          "typescript": {}
+        }
+      },
+      "type": "custom",
+      "wasm": ".azle/examen_backend/examen_backend.wasm"
+    },
+    "examen_frontend": {
+      "dependencies": [
+        "examen_backend"
+      ],
+      "source": [
+        "src/examen_frontend/dist"
+      ],
+      "type": "assets",
+      "workspace": "examen_frontend"
+    },
+    "internet_identity": {
+      "candid": "https://github.com/dfinity/internet-identity/releases/latest/download/internet_identity.did",
+      "frontend": {},
+      "remote": {
+        "id": {
+          "ic": "rdmx6-jaaaa-aaaaa-aaadq-cai"
+        }
+      },
+      "type": "custom",
+      "wasm": "https://github.com/dfinity/internet-identity/releases/latest/download/internet_identity_dev.wasm.gz"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "output_env_file": ".env",
+  "version": 1
+}
